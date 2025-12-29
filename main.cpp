@@ -12,17 +12,10 @@ int main() {
         cin >> processes[i].arrival_time >> processes[i].burst_time;
         processes[i].pid = i + 1;
     }
-
-    // Sort by arrival time (using cmp from scheduler.cpp)
-    sort(processes.begin(), processes.end(), cmp);
-
-    // For now, just print input (as in your original code)
+    fcfs_scheduling(processes);
     for (int i = 0; i < n; i++) {
-        cout << processes[i].pid << " " << processes[i].arrival_time << " "
-             << processes[i].burst_time << "\n";
+        cout<<processes[i].start_time<<" "<<processes[i].completion_time<<" "<<processes[i].turnaround_time<<" "<<processes[i].waiting_time<<endl;
     }
-
-    // fcfs_scheduling(processes);
 
     return 0;
 }
